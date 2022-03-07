@@ -1,18 +1,3 @@
-# -*- coding: utf-8 -*-
-# Script Name   : query_sku_list.py
-# Author        : Caiziyang
-# Time          : 2022/3/7 14:49
-# Version       : 1.0.1
-# Modifications : 
-#
-# Description   :
-# -*- coding: utf-8 -*-
-# Script Name   : query_detail.py
-# Author        : Caiziyang
-# Time          : 2022/3/7 14:46
-# Version       : 1.0.1
-# Modifications :
-#
 # Description   :
 # -*- coding: utf-8 -*-
 # Script Name   : p_query_sku_test.py
