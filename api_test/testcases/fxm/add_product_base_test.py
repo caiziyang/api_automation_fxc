@@ -21,7 +21,7 @@ from p_fxm_product_test import TestCasePFxmProduct
 
 class TestCaseAddProductBase(HttpRunner):
 
-    config = Config("testcase description").verify(False).base_url("${ENV(FXMURL)}")
+    config = Config("testcase description").verify(False).base_url("${ENV(T_FXM_URL)}")
 
     teststeps = [
         Step(
@@ -36,14 +36,12 @@ class TestCaseAddProductBase(HttpRunner):
             .with_headers(
                 **{
                     "content-type": "application/json",
-                    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"
-                                  " Chrome/98.0.4758.102 Safari/537.36",
+                    "user-agent": "${ENV(USER_AGENT)}",
                 }
             )
             .with_cookies(
                 **{
-                    "JSESSIONID": "E4145889AC0203AED54C62384C365D8C",
-                    "RSESSIONID": "YWJL0EQC33BMFYJEP09PHCFRZJGV94J0",
+                    "RSESSIONID": "${ENV(T_COOKIE)}",
                 }
             )
             .with_json(
