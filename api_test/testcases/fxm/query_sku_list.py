@@ -8,7 +8,6 @@
 #
 # Description   :
 from httprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
-from get_product_class import get_product_class
 from get_fxm_product_id import TestCaseGetFxmProductId
 
 
@@ -46,6 +45,11 @@ class TestCaseQuerySkuList(HttpRunner):
                     },
                 }
             )
+            .extract()
+            .with_jmespath("body.result.rows[0].customizedGroup", "customizedGroup")
+            .with_jmespath("body.result.rows[0].sku", "sku")
+            .with_jmespath("body.result.rows[0].skuRebate", "skuRebate")
+            .with_jmespath("body.result.rows[0].pc_name", "pc_name")
             .validate()
             .assert_equal("status_code", 200)
         ),
