@@ -53,5 +53,19 @@ def voucherCode():
     return voucher_code
 
 
+# 三方码生成
+def third_party_code():
+    ret = ""
+    for i in range(5):
+        num = random.randint(0, 9)
+        a = random.randint(97, 122)
+        b = chr(a)
+        ret += "{}{}".format(num, b)
+    order_id = "{}".format(ret)
+    return order_id
+
+
 if __name__ == "__main__":
-    print(get_fxm_headers())
+    with open("1.txt", "w+", encoding="utf-8") as f:
+        for i in range(1545, 11367):
+            f.write(str(i) + "\n")
